@@ -59,8 +59,14 @@ class ListeTest
         assertEquals("",listeTom.printFromHead());
 
 
+    }
 
 
+    @Test
+    void PrintFromTail()
+    {
+
+        assertEquals("0123",listemedTal.printFromTail());
     }
 }
 

@@ -49,4 +49,19 @@ public class Liste
         return res;
 
     }
+
+    public String printFromTail()
+    {
+
+        Node n = tail;
+        String res = "";
+
+        while (n != null) {
+
+            res+= n.data;
+
+            n = n.previous;
+        }
+        return res;
+    }
 }
