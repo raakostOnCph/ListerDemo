@@ -9,8 +9,8 @@ class ListeTest
 {
 
     Liste listeTom = new Liste();
-
     Liste listemedTal = new Liste();
+
 
 
     @BeforeEach
@@ -26,6 +26,8 @@ class ListeTest
         listemedTal.insertFromHead(node2);
         listemedTal.insertFromHead(node3);
     }
+
+
 
     @org.junit.jupiter.api.Test
     void isEmpty()
@@ -67,6 +69,28 @@ class ListeTest
     {
 
         assertEquals("0123",listemedTal.printFromTail());
+    }
+
+
+    @Test
+    void removeFromHead()
+    {
+
+        Node node = new Node("");
+
+        assertEquals(node.data, listeTom.removeFromHead().data);
+
+       Node testNode = new Node("4");
+
+       listeTom.insertFromHead( testNode);
+        assertEquals(testNode, listeTom.removeFromHead());
+        assertEquals(true, listeTom.isEmpty());
+
+        assertEquals("3", listemedTal.removeFromHead().data );
+        assertEquals("210", listemedTal.printFromHead());
+
+
+
     }
 }
 

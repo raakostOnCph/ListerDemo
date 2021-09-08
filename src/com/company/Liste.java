@@ -6,8 +6,8 @@ public class Liste
     Node tail = null;
 
 
-
-    public boolean isEmpty() {
+    public boolean isEmpty()
+    {
 
         if (head == null && tail == null) {
             return true;
@@ -30,7 +30,6 @@ public class Liste
         return head;
 
 
-
     }
 
     public String printFromHead()
@@ -38,7 +37,7 @@ public class Liste
 
         Node n = head;
 
-        String res="";
+        String res = "";
 
         while (n != null) {
 
@@ -58,10 +57,35 @@ public class Liste
 
         while (n != null) {
 
-            res+= n.data;
+            res += n.data;
 
             n = n.previous;
         }
         return res;
+    }
+
+
+    public Node removeFromHead()
+    {
+        Node node = new Node("");
+        if (isEmpty()) {
+
+            return node;
+        }
+        if (head == tail) {
+
+            node = head;
+            head = null;
+            tail = null;
+            return node;
+        }
+
+         node = head;
+
+        head = head.next;
+
+        head.previous.next = null;
+        head.previous = null;
+        return node;
     }
 }
