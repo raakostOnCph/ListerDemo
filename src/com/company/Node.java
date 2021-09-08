@@ -5,8 +5,8 @@ public class Node
 
     String data;
 
-    Node n = null;
-    Node p = null;
+    Node  next= null;
+    Node previous = null;
 
     public Node(String data)
     {
