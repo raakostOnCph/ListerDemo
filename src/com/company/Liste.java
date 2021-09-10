@@ -88,4 +88,49 @@ public class Liste
         head.previous = null;
         return node;
     }
+
+    public Node removeFromTail()
+    {
+
+        Node node = new Node("");
+
+        if (isEmpty()) {
+            return node;
+        }
+
+        if (head == tail) {
+            node = head;
+
+            head = null;
+            tail = null;
+
+            return node;
+        }
+
+        node = tail;
+
+        tail = tail.previous;
+        tail.next.previous = null;
+        tail.next = null;
+
+        return node;
+    }
+
+    public Node insertFromTail(Node testNode)
+    {
+        if (head == null && tail == null ) {
+
+            head = testNode;
+            tail = testNode;
+        return tail;
+        }
+
+        // her er der flere elementer i listen.
+
+        tail.next = testNode;
+        testNode.previous = tail;
+
+        tail = testNode;
+        return tail;
+    }
 }

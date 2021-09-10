@@ -90,7 +90,39 @@ class ListeTest
         assertEquals("210", listemedTal.printFromHead());
 
 
+    }
 
+    @Test
+    void removeFromTail()
+    {
+
+        assertEquals("", listeTom.removeFromTail().data);
+
+        Node testNode = new Node("test");
+
+        listeTom.insertFromHead(testNode);
+
+        assertEquals(testNode, listeTom.removeFromTail());
+        assertEquals(true, listeTom.isEmpty());
+
+        assertEquals("0", listemedTal.removeFromTail().data);
+
+        assertEquals("321", listemedTal.printFromHead());
+
+    }
+
+    @Test
+    void indsætterbagfra()
+    {
+        Node testNode = new Node("1");
+
+        assertEquals(testNode, listeTom.insertFromTail(testNode));
+
+        Node testNode1 = new Node("2");
+
+        assertEquals(testNode1, listeTom.insertFromTail(testNode1));
+
+        assertEquals("12", listeTom.printFromHead());
     }
 }
 
